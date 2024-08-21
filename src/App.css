@@ -1,0 +1,32 @@
+.App {
+  margin: 0;
+  padding: 0;
+}
+/* .Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(32, 32, 32));
+  color: rgb(255, 255, 255);
+  
+} */
+.Main {
+  min-height: 100vh;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(90deg, rgb(13,33,79), rgb(4, 11, 27));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Content {
+  margin-top: 10vh;
+}
+
+.caixaTexto {
+  display: flex;
+  width: 600px;
+  height: 400px;
+
+}
