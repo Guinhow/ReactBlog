@@ -14,29 +14,11 @@ const SECRET_KEY = 'your_secret_key';
 app.use(bodyParser.json());
 app.use(cors());
 
-// const users = [{ id: 1, username: 'user', password: 'password'}]; // senha hasheada
-
-// app.post('/api/login', (req, res) => {
-//   const { username, password } = req.body;
-//   const user = users.find(user => user.username === username);
-//   if (user && bcrypt.compareSync(password, user.password)) {
-//     const token = jwt.sign({ id: user.id }, 'secret_key', { expiresIn: '1h' });
-//     res.json({ token });
-//   } else {
-//     res.status(401).json({ message: 'Invalid credentials' });
-//   }
-// });
-
-
-
-
-// Usuário fake para demonstração
 const user = {
   username: 'admin',
-  password: bcrypt.hashSync('password', 8) // Senha hash para segurança
+  password: bcrypt.hashSync('password', 8) 
 };
 
-// Rota de login
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -50,13 +32,13 @@ app.post('/api/login', (req, res) => {
   }
 
   const token = jwt.sign({ id: user.username }, SECRET_KEY, {
-    expiresIn: 0 // expira em 24 horas
+    expiresIn: 0 
   });
 
   res.status(200).send({ auth: true, token: token });
 });
 
-// Rota protegida
+
 app.get('/api/protected', (req, res) => {
   const token = req.headers['x-access-token'];
   if (!token) {
@@ -71,14 +53,6 @@ app.get('/api/protected', (req, res) => {
   });
 });
 
-
-
-
-
-
-
-
-// Rota para receber os dados do formulário
 app.post('/api/posts', (req, res) => {
   const post = req.body;
   fs.readFile(DATA_FILE, (err, data) => {
@@ -98,7 +72,6 @@ app.post('/api/posts', (req, res) => {
   });
 });
 
-// Rota para servir os dados armazenados
 app.get('/api/posts', (req, res) => {
   fs.readFile(DATA_FILE, (err, data) => {
     if (err) {
@@ -110,7 +83,6 @@ app.get('/api/posts', (req, res) => {
   });
 });
 
-// Inicializa o arquivo JSON se ele não existir
 if (!fs.existsSync(DATA_FILE)) {
   fs.writeFileSync(DATA_FILE, JSON.stringify([]));
 }

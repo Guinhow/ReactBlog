@@ -28,10 +28,8 @@ function App() {
           <main className="Main">
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* <Route path="/Home" element={<Home />} /> */}
               <Route path="/Posts" element={<Produtos />} />
               <Route path="/Novo Post" element={<ProtectedRoute token={token}><Blog /></ProtectedRoute>} />
-              {/* <Route path="/Novo Post" element={<Blog />} /> */}
               <Route path="/Contato" element={<Contato />} />
               <Route path="/login" element={<Login setToken={handleSetToken} />} />
             </Routes>

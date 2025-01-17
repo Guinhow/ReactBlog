@@ -2,15 +2,7 @@
   margin: 0;
   padding: 0;
 }
-/* .Header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
-  background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(32, 32, 32));
-  color: rgb(255, 255, 255);
-  
-} */
+
 .Main {
   min-height: 100vh;
   color: rgb(255, 255, 255);
@@ -30,3 +22,8 @@
   height: 400px;
 
 }
+.posts-top {
+  margin-top: 70px;
+  margin-left: 20px;
+}
+

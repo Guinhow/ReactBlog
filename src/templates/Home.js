@@ -6,6 +6,7 @@ function Home() {
         <p>Os posts são salvos em data.json </p>
         <p>Para iniciar o servidor node usar o comando -- node server.js --</p>
         <p>Para iniciar o react usar o comando -- npm start --</p>
+        <p>admin // password</p>
       </div>
     );
   }

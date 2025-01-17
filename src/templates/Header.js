@@ -22,7 +22,6 @@ function Header() {
       <div className="usuario">
         <button className="itens botao">Sign-up</button>
         <Link to="/login" className="itens botao">Login</Link>
-        {/* <button className="itens botao">Login</button> */}
       </div>
     </div>
   )

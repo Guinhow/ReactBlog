@@ -5,9 +5,9 @@ const Produtos = () => {
   const { posts } = useContext(PostsContext);
 
   return (
-    <div>
+    <div className='posts-top'>
       <h1>Posts</h1>
-      <div>
+      <div className='posts-content'>
         {posts.map((post, index) => (
           <div key={index} style={{ marginBottom: '20px', whiteSpace: 'pre-wrap' }}>
             {post.text}
